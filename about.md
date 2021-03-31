@@ -1,7 +1,7 @@
 ---
 layout: page
-title: about
-permalink: /about/
+title: About me
+permalink: /About/
 ---
 
 <img class="col one right" src="/img/Ting.jpeg">
