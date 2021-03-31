@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Ting ZHU
-permalink: /Ting ZHU/
+permalink: /About me/
 ---
 
 <img class="col one right" src="/img/Ting.jpeg">
