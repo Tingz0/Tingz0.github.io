@@ -1,19 +1,15 @@
 ---
 layout: page
-title: Ting ZHU
-permalink: /Ting/
+title: about
+permalink: /about/
 ---
 
-<img class="col one right" src="/img/Ting.jpeg">
+<img class="col one right" src="/img/prof_pic.jpg">
 
 <br/>
-Hi, my name is Ting ZHU. 
+Write your biography here. Tell the world about yourself. Link to your favorite <a href="http://reddit.com" target="blank">subreddit</a>. You can put a picture in, too. The code is already in, just name your picture "prof_pic.jpg" and put it in the img folder. 
 
-I am now a master student in department of statistics, Warwick. 
-
-I also hold a MSc in Ecology: before turing my reserch field to statistics, I study time series characterstics of dynamic photosynthesis in Peking University. 
-
-I love hiking and exploring food from different countries. 
+Link to your social media connections, too. This theme is set up to use <a href="http://fortawesome.github.io/Font-Awesome/" target="blank">Font Awesome icons</a>, like the ones below. Add your facebook, twitter, linkedin, or just disable all of them. 
 
 
 <br/>

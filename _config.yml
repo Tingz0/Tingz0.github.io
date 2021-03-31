@@ -1,119 +1,29 @@
-# -----------------------------------------------------------------------------
 # Site settings
-# -----------------------------------------------------------------------------
-name: Agnieszka Słowik
-email: agnieszka.slowik44@gmail.com
-description: > # this means to ignore newlines until "url:"
-  PhD student in the Artificial Intelligence Group at the University of Cambridge
-footer_text: >
-  Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-
-url:  # the base hostname & protocol for your site
+title: *folio
+email: you@example.com
+description: > # this means to ignore newlines until "baseurl:"
+  A simple, whitespace, helvetica based portfolio theme.
 baseurl:  # the subpath of your site, e.g. /blog/
-last_updated: # leave blank if you don't want to display last updated
-
-# -----------------------------------------------------------------------------
-# Social integration
-# -----------------------------------------------------------------------------
-scholar_userid: BPqK1l0AAAAJ # your Google Scholar ID
-dblp_id: s/Slowik:Agnieszka
-researchgate_username: Agnieszka_Slowik7
-github_username: Slowika # your GitHub user name
-twitter_username: slowiika # your Twitter handle
-linkedin_username: aslowik # your LinkedIn user name
-spotify_username: zlowiczek?si=ZwWimD32QoqkTk6pcXOLDA
-
-#contact_note: >
-
-
-google_analytics: UA-XXXXXXXXX # out your google-analytics code
-
-# -----------------------------------------------------------------------------
-# Blog
-# -----------------------------------------------------------------------------
-#blog_name: al-folio
-#blog_description: a simple whitespace theme for academics
-
-# Pagination
-paginate: 4
-permalink: /blog/:year/:title/
-paginate_path: /blog/page:num/
-
-text:
-  pagination:
-    newer: 'Newer'
-    older: 'Older'
-
-# Comments
-disqus_shortname:  # put your disqus shortname
-
-# Optional features
-show_social_icons:  true
-enable_anchorjs:    true
-enable_katex:       true
-
-# -----------------------------------------------------------------------------
-# Collections
-# -----------------------------------------------------------------------------
-collections:
-  news:
-    defaults:
-      layout: post
-    output: true
-    permalink: /news/:path/
-  projects:
-    output: true
-    permalink: /projects/:path/
-
-news_limit: 10
-
-# -----------------------------------------------------------------------------
-# Jekyll settings
-# -----------------------------------------------------------------------------
+url:  # the base hostname & protocol for your site
+twitter_username: twitter_username
+github_username:  github_username
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
 
-# Includes & excludes
-include: ['_pages']
-exclude: [vendor]
+highlighter: rouge
 
-# Plug-ins
-plugins:
-    - jekyll-email-protect
-    - jekyll-paginate
-    - jekyll/scholar
-    - jemoji
+# Pagination
+paginate: 15
+paginate_path: "/blog/page:num/"
 
-# Jekyll-Scholar
-scholar:
 
-  last_name: Słowik
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:path/
+  poetry:
+    output: true
+    permalink: /poetry/:path/
 
-  style: apa
-  locale: en
 
-  sort_by: year
-  order: descending
-
-  source: /_bibliography/
-  bibliography: papers.bib
-  bibliography_template: bib
-
-  replace_strings: true
-  join_strings: true
-
-  details_dir: bibliography
-  details_layout: bibtex.html
-  details_link: Details
-
-  query: "@*"
-
-# -----------------------------------------------------------------------------
-# Other settings
-# -----------------------------------------------------------------------------
-jquery_version: "1.12.4"
-katex_version: "0.9.0"
-anchorjs_version: "3.2.2"
