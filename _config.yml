@@ -1,8 +1,8 @@
 # Site settings
-title: *folio
-email: you@example.com
+title: Ting ZHU
+email: ting.zhu@warwick.ac.uk
 description: > # this means to ignore newlines until "baseurl:"
-  A simple, whitespace, helvetica based portfolio theme.
+  MSc in Statistics, University of Warwick
 baseurl:  # the subpath of your site, e.g. /blog/
 url:  # the base hostname & protocol for your site
 twitter_username: twitter_username
@@ -19,9 +19,9 @@ paginate_path: "/blog/page:num/"
 
 
 collections:
-  portfolio:
+  about:
     output: true
-    permalink: /portfolio/:path/
+    permalink: /about/:path/
   poetry:
     output: true
     permalink: /poetry/:path/
