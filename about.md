@@ -23,7 +23,6 @@ I love hiking and exploring food from different countries.
 	<a href="ting.zhu@warwick.ac.uk"><i class="fa fa-envelope-square"></i></a>
 	<a href="https://github.com/Tingz0" target="_blank"><i class="fa fa-github-square"></i></a>
 	<a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-	<a href="http://tumblr.com" target="_blank"><i class="fa fa-tumblr-square"></i></a>
 	<a href="https://twitter.com/Ting21757229" target="_blank"><i class="fa fa-twitter-square"></i></a>
 </span>
 
