@@ -3,7 +3,19 @@ layout: post
 title: Monte Carlo method — sampling from Gaussian Mixture models
 date: 2021-04-01 07:59:00
 ---
-  
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+
 ## Gaussian Mixture models
 if we.....
 Here we take Gaussian mixture models as an example to illustrate and compare different sampler.
@@ -33,7 +45,7 @@ The following is an illustration of a mixture of two Gaussians:
 
 $f(x) = 0.3*N(-5,2^2)+0.7*N(10,3^2)$
 
-```{r }
+```
 two_mixture_normal = function(seq,weight1=0.3,weight2=0.7,mu1=-5,mu2=10,sigma1=2,sigma2=3){
   fdensity = weight1*dnorm(seq,mu1,sigma1) + weight2*dnorm(seq,mu2,sigma2)
   return(fdensity)
@@ -43,8 +55,8 @@ seq = -200:300/10
 f_density = two_mixture_normal(seq)
 plot(seq,f_density,type='p')
 ```
-#### Rejection sampler
 
+#### Rejection sampler
 To implement rejection sampling, we first need to choose a suitable proposal distribution $q(x)$, which should satisfy two conditions: 
 
 (1) the support of $f(x)$ should be a subset of the support of $q(x)$;
@@ -54,7 +66,8 @@ The first condition ensure that we could sample from all area of $f(x)$ and the 
 
 Here we could choose $N(5,10^2)$ as a proposal distribution. As the acceptance rate of rejection sampling is $\frac 1M$, we want M to be as smaller as possible when above condition (2) was met. Therefore, we set $ M = max(\frac {f(x)}{g(x)}) $ , here M = 2.68, then the theoretical acceptance rate is $\frac 1{2.68} = 0.37$
 
-```{r}
+
+```
 seq2 = -2000:3000/100
 f_density2 = two_mixture_normal(seq2)
 q_density = dnorm(seq2, 5, 10)
@@ -65,7 +78,7 @@ plot(seq2,q_density_M,type='l',col='red')
 lines(seq2,f_density2,type='h',col='gray')
 ```
 
-```{r}
+```
 # get 1000 samples
 num = 5000
 rejection_sampler = function(n=num){
