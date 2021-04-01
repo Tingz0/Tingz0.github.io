@@ -4,7 +4,7 @@ title: About me
 permalink: /About/
 ---
 
-<img class="col one right" src="/img/Ting.jpeg">
+<img class="col one right" src="/img/Ting2.jpeg">
 
 <br/>
 Hi, my name is Ting ZHU.

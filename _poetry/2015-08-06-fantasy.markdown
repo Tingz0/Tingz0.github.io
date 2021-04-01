@@ -1,11 +1,43 @@
 ---
 layout: post
-title: Implementation of reversible jump MCMC
-date: 2015-08-06 07:59:00
+title: Monte Carlo method — sampling from Gaussian Mixture models
+date: 2021-04-01 07:59:00
 ---
   
-## How could we sample from different dimensions ?
-
+## Gaussian Mixture models
 if we.....
+Here we take Gaussian mixture models as an example to illustrate and compare different sampler.
 
-## R code
+## Content
+
+The content of this article is as followed:
+1. Rejection sampling
+2. Importance sampling
+3. Gibbs sampling
+4. Metropolis Hasting sampling
+5. Data Augmentation
+6. Reversible Jump Algorithm
+7. Simulated Annealing
+
+
+We will use trend plot, ergodic mean, Rieman sum and Kolmogorov-Smirnov test as methods to assess the convergence of our samplers.
+
+## 1 Rejection sampling
+
+
+## 2 Importance sampling
+
+
+## 3 Gibbs sampling
+
+
+## 4 Metropolis Hasting sampling
+
+
+## 5 Data Augmentation 
+
+
+## 6 Reversible Jump Algorithm
+
+
+## 7 Simulated Annealing
