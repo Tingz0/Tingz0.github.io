@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Monte Carlo method — sampling from Gaussian Mixture models (3)
-date: 2021-03-31 18:50:00
+title: Monte Carlo method — sampling from Gaussian Mixture models (4)
+date: 2021-03-31 18:12:00
 ---
 
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
@@ -18,5 +18,4 @@ date: 2021-03-31 18:50:00
 **Content**
 
 The content of this article is as followed:
-5. Data Augmentation
-6. Reversible Jump Algorithm
+7. Simulated Annealing
