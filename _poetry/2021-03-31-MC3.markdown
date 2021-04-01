@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Implementation of Metropolis Hasting sampler
+title: Monte Carlo method — sampling from Gaussian Mixture models (3)
 date: 2021-03-31 18:50:00
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Implementation of Anne Tempering
+title: Monte Carlo method — sampling from Gaussian Mixture models (2)
 date: 2021-03-31 18:46:00
 ---
   
