@@ -4,8 +4,19 @@ title: Implementation of Metropolis Hasting sampler
 date: 2021-03-31 18:50:00
 ---
 
-## What is Metropolis Hasting sampler ?
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-MH is...
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
 
-## R code
+**Content**
+
+The content of this article is as followed:
+5. Data Augmentation
+6. Reversible Jump Algorithm

@@ -4,8 +4,19 @@ title: Implementation of Anne Tempering
 date: 2021-03-31 18:46:00
 ---
   
-## How to find the mode of a distribution  ?
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-if we.....
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
 
-## R code
+**Content**
+
+The content of this article is as followed:
+3. Gibbs sampling
+4. Metropolis Hasting sampling
