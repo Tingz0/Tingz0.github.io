@@ -15,12 +15,7 @@ date: 2021-04-01 07:59:00
   });
 </script>
 
-
-## Gaussian Mixture models
-if we.....
-Here we take Gaussian mixture models as an example to illustrate and compare different sampler.
-
-## Content
+**Content**
 
 The content of this article is as followed:
 1. Rejection sampling
@@ -34,8 +29,9 @@ The content of this article is as followed:
 
 We will use trend plot, ergodic mean, Rieman sum and Kolmogorov-Smirnov test as methods to assess the convergence of our samplers.
 
-### 1 Rejection sampling
-#### Gaussian Mixture model
+
+**Gaussian Mixture model**
+
 A Gaussian Mixture model is consisted of several Gaussians, the density function is in following form:
 
 $f(x) = \pi_1N(\mu_1,\sigma_1^2)+\pi_2N(\mu_2,\sigma_2^2)...+\pi_kN(\mu_k,\sigma_k^2)$
@@ -55,8 +51,11 @@ seq = -200:300/10
 f_density = two_mixture_normal(seq)
 plot(seq,f_density,type='p')
 ```
+<img class="col one right" src="/img/Rejection/fig1.jpeg">
 
-#### Rejection sampler
+
+**Rejection sampler**
+
 To implement rejection sampling, we first need to choose a suitable proposal distribution $q(x)$, which should satisfy two conditions: 
 
 (1) the support of $f(x)$ should be a subset of the support of $q(x)$;
@@ -102,6 +101,9 @@ rejection_sampler = function(n=num){
 result = rejection_sampler()
 num / result$count
 ```
+
+<img class="col one right" src="/img/Rejection/fig2.jpeg">
+
 The empirical acceptance rate is 0.38, which is close to the theoretical one. 
 To assess the quality of this sampler, we check the histogram and also empirical expectation:
 first, the shape of the following histogram look similar to the theoretical one; then, mean value of sample sets is 5.55, and theoretical expectation is $0.3*-5+0.7*10=5.5$
@@ -111,19 +113,5 @@ hist(result$sample_set,main='Histogram of samples')
 mean(result$sample_set)
 ```
 
-### 2 Importance sampling
+<img class="col one right" src="/img/Rejection/fig3.jpeg">
 
-
-### 3 Gibbs sampling
-
-
-### 4 Metropolis Hasting sampling
-
-
-### 5 Data Augmentation 
-
-
-## 6 Reversible Jump Algorithm
-
-
-## 7 Simulated Annealing
