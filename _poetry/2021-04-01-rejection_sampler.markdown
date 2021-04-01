@@ -104,7 +104,7 @@ num / result$count
 ```
 The empirical acceptance rate is 0.38, which is close to the theoretical one. 
 To assess the quality of this sampler, we check the histogram and also empirical expectation:
-first, the shape of the following histogram look similar to the theoretical one; then, mean value of sample sets is 5.55, and theoretical expectation is $0.3*-5+0.7*10 = 5.5$
+first, the shape of the following histogram look similar to the theoretical one; then, mean value of sample sets is 5.55, and theoretical expectation is $0.3*-5+0.7*10=5.5$
 
 ```{r}
 hist(result$sample_set,main='Histogram of samples')
