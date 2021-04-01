@@ -22,19 +22,92 @@ The content of this article is as followed:
 
 We will use trend plot, ergodic mean, Rieman sum and Kolmogorov-Smirnov test as methods to assess the convergence of our samplers.
 
-## 1 Rejection sampling
+### 1 Rejection sampling
+#### Gaussian Mixture model
+A Gaussian Mixture model is consisted of several Gaussians, the density function is in following form:
+
+$f(x) = \pi_1N(\mu_1,\sigma_1^2)+\pi_2N(\mu_2,\sigma_2^2)...+\pi_kN(\mu_k,\sigma_k^2)$
+while $\sum_{i=1}^k\pi_i = 1$
+
+The following is an illustration of a mixture of two Gaussians:
+
+$f(x) = 0.3*N(-5,2^2)+0.7*N(10,3^2)$
+
+```{r }
+two_mixture_normal = function(seq,weight1=0.3,weight2=0.7,mu1=-5,mu2=10,sigma1=2,sigma2=3){
+  fdensity = weight1*dnorm(seq,mu1,sigma1) + weight2*dnorm(seq,mu2,sigma2)
+  return(fdensity)
+}
+
+seq = -200:300/10
+f_density = two_mixture_normal(seq)
+plot(seq,f_density,type='p')
+```
+#### Rejection sampler
+
+To implement rejection sampling, we first need to choose a suitable proposal distribution $q(x)$, which should satisfy two conditions: 
+
+(1) the support of $f(x)$ should be a subset of the support of $q(x)$;
+(2) $f(x) \le M*q(x)$ for all x. 
+
+The first condition ensure that we could sample from all area of $f(x)$ and the second condition suggest a heavier tail of $q(x)$.
+
+Here we could choose $N(5,10^2)$ as a proposal distribution. As the acceptance rate of rejection sampling is $\frac 1M$, we want M to be as smaller as possible when above condition (2) was met. Therefore, we set $ M = max(\frac {f(x)}{g(x)}) $ , here M = 2.68, then the theoretical acceptance rate is $\frac 1{2.68} = 0.37$
+
+```{r}
+seq2 = -2000:3000/100
+f_density2 = two_mixture_normal(seq2)
+q_density = dnorm(seq2, 5, 10)
+M = max(f_density2/q_density) # get M
+
+q_density_M = M*dnorm(seq2, 5, 10)
+plot(seq2,q_density_M,type='l',col='red')
+lines(seq2,f_density2,type='h',col='gray')
+```
+
+```{r}
+# get 1000 samples
+num = 5000
+rejection_sampler = function(n=num){
+  sample_set = seq(1:n)
+  M = 2.68
+  count = 0
+  for (i in 1:n){
+    u = 1
+    p = 0
+    while (u > p){
+      x = rnorm(1,5,10)
+      u = runif(1) 
+      p = two_mixture_normal(x) / (M*dnorm(x,5,10))
+      count = count + 1
+    }
+    sample_set[i] = x
+  }
+  return(list(sample_set = sample_set, count = count))
+}
+
+result = rejection_sampler()
+num / result$count
+```
+The empirical acceptance rate is 0.38, which is close to the theoretical one. 
+To assess the quality of this sampler, we check the histogram and also empirical expectation:
+first, the shape of the following histogram look similar to the theoretical one; then, mean value of sample sets is 5.55, and theoretical expectation is $0.3*-5+0.7*10 = 5.5$
+
+```{r,echo=FALSE}
+hist(result$sample_set,main='Histogram of samples')
+mean(result$sample_set)
+```
+
+### 2 Importance sampling
 
 
-## 2 Importance sampling
+### 3 Gibbs sampling
 
 
-## 3 Gibbs sampling
+### 4 Metropolis Hasting sampling
 
 
-## 4 Metropolis Hasting sampling
-
-
-## 5 Data Augmentation 
+### 5 Data Augmentation 
 
 
 ## 6 Reversible Jump Algorithm
