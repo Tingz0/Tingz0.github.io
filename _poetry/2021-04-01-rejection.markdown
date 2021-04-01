@@ -51,7 +51,7 @@ seq = -200:300/10
 f_density = two_mixture_normal(seq)
 plot(seq,f_density,type='p')
 ```
-<img src="/img/Rejection/fig1.jpeg">
+<img class="col three" src="/img/Rejection/fig1.jpeg">
 
 
 **Rejection sampler**
@@ -102,7 +102,7 @@ result = rejection_sampler()
 num / result$count
 ```
 
-<img src="/img/Rejection/fig2.jpeg">
+<img class="col three" src="/img/Rejection/fig2.jpeg">
 
 The empirical acceptance rate is 0.38, which is close to the theoretical one. 
 To assess the quality of this sampler, we check the histogram and also empirical expectation:
@@ -113,5 +113,5 @@ hist(result$sample_set,main='Histogram of samples')
 mean(result$sample_set)
 ```
 
-<img src="/img/Rejection/fig3.jpeg">
+<img class="col three" src="/img/Rejection/fig3.jpeg">
 
